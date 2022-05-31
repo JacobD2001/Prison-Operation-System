@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Prison_Operation_System.Models
+namespace PrisonOperationSystem_UI.Models
 {
-    public partial class Cele
+    public partial class Wykroczenium
     {
-        public Cele()
+        public Wykroczenium()
         {
             Wiezniowies = new HashSet<Wiezniowie>();
         }
 
         public int Id { get; set; }
-        public string TypCeli { get; set; } = null!;
+        public string RodzajWykroczenia { get; set; } = null!;
+        public string Kara { get; set; } = null!;
         public string? Opis { get; set; }
 
         public virtual ICollection<Wiezniowie> Wiezniowies { get; set; }

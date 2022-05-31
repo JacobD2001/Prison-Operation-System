@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Prison_Operation_System.Models;
+using PrisonOperationSystem_UI.Models;
 
-namespace Prison_Operation_System.Data
+namespace PrisonOperationSystem_UI.Data
 {
     public partial class ZakładKarnyContext : DbContext
     {
@@ -18,6 +18,7 @@ namespace Prison_Operation_System.Data
         }
 
         public virtual DbSet<Cele> Celes { get; set; } = null!;
+        public virtual DbSet<DaneLogowanium> DaneLogowania { get; set; } = null!;
         public virtual DbSet<Nagrody> Nagrodies { get; set; } = null!;
         public virtual DbSet<PracaWiezniow> PracaWiezniows { get; set; } = null!;
         public virtual DbSet<Pracownicy> Pracownicies { get; set; } = null!;
@@ -36,7 +37,7 @@ namespace Prison_Operation_System.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
             }
         }
@@ -56,6 +57,15 @@ namespace Prison_Operation_System.Data
                 entity.Property(e => e.Opis).HasMaxLength(1000);
 
                 entity.Property(e => e.TypCeli).HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<DaneLogowanium>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Haslo).HasMaxLength(50);
+
+                entity.Property(e => e.Login).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Nagrody>(entity =>

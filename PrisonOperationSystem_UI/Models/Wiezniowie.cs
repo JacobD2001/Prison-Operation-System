@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Prison_Operation_System.Models
+namespace PrisonOperationSystem_UI.Models
 {
     public partial class Wiezniowie
     {
