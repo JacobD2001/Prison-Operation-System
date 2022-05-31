@@ -16,10 +16,10 @@
             <Label Content="LOGIN PANEL" FontFamily="Courier New" Foreground="White" FontSize="35" HorizontalAlignment="Center"/>
         <Separator Background="White"></Separator>
         <Label Content="Username" FontFamily="Courier New" Foreground="White" FontSize="20"/>
-        <TextBox Name="txtUsername" Background="Gray" Foreground="White" FontSize="18"/>
+        <TextBox Name="txtLogin" Background="Gray" Foreground="White" FontSize="18"/>
         <Label Content="Password" FontFamily="Courier New" Foreground="White" FontSize="20"/>
-        <PasswordBox Name="txtPassword" Background="Gray" Foreground="White" FontSize="18"/>
-        <Button Name="btnLogin" Content="Login" Margin="60" Background="Gray" Foreground="White" FontSize="18"/>
+        <PasswordBox Name="txtHaslo" Background="Gray" Foreground="White" FontSize="18"/>
+        <Button Name="btnLogin" Click="btnLogin_Click" Content="Login" Margin="60" Background="Gray" Foreground="White" FontSize="18"/>
     </StackPanel>
  
 
