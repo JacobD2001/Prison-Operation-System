@@ -47,7 +47,7 @@ namespace PrisonOperationSystem_UI
                 }
                 else //else display this one
                 {
-                    MessageBox.Show("Login lub hasło jest niepoprawne!");
+                    MessageBox.Show("Login or password is invalid");
                 }
             }
             catch (Exception ex)

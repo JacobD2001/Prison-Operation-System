@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrisonOperationSystem_UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label Content="Dashboard"/>
-    </Grid>
+        Title="" Height="329" Width="525" FontSize="14">
+    <Viewbox Stretch="Fill" StretchDirection="Both">
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="C:\Users\dziko\source\repos\Prison Operation System\images\mainbackground.jpg"
+                AlignmentY="Top" AlignmentX="Center"/>
+            </StackPanel.Background>
+            <Label Content="Prison Management Panel" FontFamily="Courier New" Foreground="Snow" FontSize="33" HorizontalAlignment="Center"/>
+            <Separator Background="White"></Separator>
+            <Label Content="Personal Identity Number(PESEL):" FontFamily="Courier New" Foreground="Snow" FontSize="16" Margin="10" HorizontalAlignment="Center"/>
+            <ComboBox Width="346" RenderTransformOrigin="1.442,-0.543" HorizontalAlignment="Center" Margin="20,0"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="True" Name="txtname1" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtname2" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtname3" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox IsReadOnly="True" Name="txtname4" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtname5" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel>
+                <Button Name="btnReleasePrisoner" Content="Realese Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Viewbox>
 </Window>

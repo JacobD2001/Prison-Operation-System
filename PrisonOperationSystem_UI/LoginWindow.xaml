@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="" Height="419" Width="400" FontSize="14">
 
-    
+    <Viewbox Stretch="Fill" StretchDirection="Both">
         <StackPanel>
             <StackPanel.Background>
                 <ImageBrush Stretch="Fill" ImageSource="C:\Users\dziko\source\repos\Prison Operation System\images\loginbackground.jpg"
                 AlignmentY="Top" AlignmentX="Center"/>
             </StackPanel.Background>
             <Label Content="LOGIN PANEL" FontFamily="Courier New" Foreground="White" FontSize="35" HorizontalAlignment="Center"/>
-        <Separator Background="White"></Separator>
-        <Label Content="Username" FontFamily="Courier New" Foreground="White" FontSize="20"/>
-        <TextBox Name="txtLogin" Background="Gray" Foreground="White" FontSize="18"/>
-        <Label Content="Password" FontFamily="Courier New" Foreground="White" FontSize="20"/>
-        <PasswordBox Name="txtHaslo" Background="Gray" Foreground="White" FontSize="18"/>
-        <Button Name="btnLogin" Click="btnLogin_Click" Content="Login" Margin="60" Background="Gray" Foreground="White" FontSize="18"/>
-    </StackPanel>
- 
+            <Separator Background="White"></Separator>
+            <Label Content="Username" FontFamily="Courier New" Foreground="White" FontSize="20"/>
+            <TextBox Name="txtLogin" Background="Gray" Foreground="White" FontSize="18"/>
+            <Label Content="Password" FontFamily="Courier New" Foreground="White" FontSize="20"/>
+            <PasswordBox Name="txtHaslo" Background="Gray" Foreground="White" FontSize="18"/>
+            <Button Name="btnLogin" Click="btnLogin_Click" Content="Login" Margin="60" Background="Gray" Foreground="White" FontSize="18"/>
+        </StackPanel>
+    </Viewbox>
 
 
 </Window>
