@@ -15,15 +15,15 @@
             <Label Content="Prison Management Panel" FontFamily="Courier New" Foreground="Snow" FontSize="33" HorizontalAlignment="Center"/>
             <Separator Background="White"></Separator>
             <Label Content="Personal Identity Number(PESEL):" FontFamily="Courier New" Foreground="Snow" FontSize="16" Margin="10" HorizontalAlignment="Center"/>
-            <ComboBox Width="346" RenderTransformOrigin="1.442,-0.543" HorizontalAlignment="Center" Margin="20,0"/>
+            <ComboBox IsEditable="True" IsReadOnly="True" Text="--SELECT PESEL--" FontFamily="Courier New" Foreground="DarkBlue" HorizontalContentAlignment="Center"  Name="DisPESEL" Width="346" RenderTransformOrigin="1.442,-0.543" HorizontalAlignment="Center" Margin="20,0" DropDownClosed="ComboBox_DropDownClosed"/>
             <StackPanel Orientation="Horizontal">
-                <TextBox IsReadOnly="True" Name="txtname1" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
-                <TextBox IsReadOnly="True" Name="txtname2" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
-                <TextBox IsReadOnly="True" Name="txtname3" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtimie" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtnazwisko" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtPESEL" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox IsReadOnly="True" Name="txtname4" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
-                <TextBox IsReadOnly="True" Name="txtname5" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtRozpWyroku" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox IsReadOnly="True" Name="txtZakWyroku" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
             </StackPanel>
             <StackPanel>
                 <Button Name="btnReleasePrisoner" Content="Realese Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144"></Button>

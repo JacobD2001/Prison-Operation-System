@@ -41,8 +41,8 @@ namespace PrisonOperationSystem_UI
                 int count = Convert.ToInt32(cmd.ExecuteScalar()); 
                 if (count == 1) //if it returns 1(meaning 1 of the rows in db) go to next window
                 {
-                    MainWindow Dashboard = new MainWindow();
-                    Dashboard.Show();
+                    MainWindow PrisonControlPanel = new MainWindow();
+                    PrisonControlPanel.Show();
                     this.Close();
                 }
                 else //else display this one
