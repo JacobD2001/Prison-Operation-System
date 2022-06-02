@@ -16,17 +16,23 @@
             <Separator Background="White"></Separator>
             <Label Content="Personal Identity Number(PESEL):" FontFamily="Courier New" Foreground="Snow" FontSize="16" Margin="10" HorizontalAlignment="Center"/>
             <ComboBox IsEditable="True" IsReadOnly="True" Text="--SELECT PESEL--" FontFamily="Courier New" Foreground="DarkBlue" HorizontalContentAlignment="Center"  Name="DisPESEL" Width="346" RenderTransformOrigin="1.442,-0.543" HorizontalAlignment="Center" Margin="20,0" DropDownClosed="ComboBox_DropDownClosed"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBox IsReadOnly="True" Text="NAME" FontFamily="Courier New" Name="txtimie" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
-                <TextBox IsReadOnly="True" Text="SURNAME" FontFamily="Courier New" Name="txtnazwisko" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
-                <TextBox IsReadOnly="True" Text="PESEL" FontFamily="Courier New" Name="txtPESEL" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBox Text="NAME" FontFamily="Courier New" Name="txtimie" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox Text="SURNAME" FontFamily="Courier New" Name="txtnazwisko" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
+                <TextBox Text="PESEL" FontFamily="Courier New" Name="txtPESEL" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="132" HorizontalAlignment="Left"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox IsReadOnly="True" Text="BEGIN DATE" FontFamily="Courier New" Name="txtRozpWyroku" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="190" HorizontalAlignment="Left"/>
-                <TextBox IsReadOnly="True" Text="END DATE" FontFamily="Courier New" Name="txtZakWyroku" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="190" HorizontalAlignment="Left"/>
+                <TextBox Text="BEGIN DATE" FontFamily="Courier New" Name="txtRozpWyroku" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="190" HorizontalAlignment="Left"/>
+                <TextBox Text="END DATE" FontFamily="Courier New" Name="txtZakWyroku" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="190" HorizontalAlignment="Left"/>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBox Text="Convicted for" FontFamily="Courier New" Name="txtConvictedFor" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
+                <TextBox Text="Threat Level" FontFamily="Courier New" Name="txtThreatLevel" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
+                <TextBox Text="Cell" FontFamily="Courier New" Name="txtCell" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Name="btnReleasePrisoner" Content="Realese Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144"></Button>
+                <Button Name="btnAddPrisoner" Click="btnAddPrisoner_Click" Content="Add Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144"></Button>
             </StackPanel>
         </StackPanel>
     </Viewbox>
