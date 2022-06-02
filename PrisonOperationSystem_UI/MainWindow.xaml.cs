@@ -108,12 +108,14 @@ namespace PrisonOperationSystem_UI
 
         private void btnAddPrisoner_Click(object sender, RoutedEventArgs e) //logic for addprisoner button
         {
+            
+
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
             try
             {
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
-                string query = "INSERT INTO Wiezniowie (Imie,Nazwisko,PESEL,RozpoczecieWyroku,PlanowaneZakonczenieWyroku) VALUES('"+this.txtimie.Text+ "','"+this.txtnazwisko.Text+"','"+this.txtPESEL.Text+"','"+this.txtRozpWyroku.Text+"','"+this.txtZakWyroku.Text+"')";
+                string query = "INSERT INTO Wiezniowie (Imie,Nazwisko,PESEL,RozpoczecieWyroku,PlanowaneZakonczenieWyroku,PrzestepstwaID,StopienZagrozeniaWiezniaID,CeleID) VALUES('" + this.txtimie.Text+ "','"+this.txtnazwisko.Text+"','"+this.txtPESEL.Text+"','"+this.txtRozpWyroku.Text+"','"+this.txtZakWyroku.Text+"','"+this.txtConvictedFor.Text+"','"+this.txtThreatLevel.Text+"','"+this.txtCell.Text+"')";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been added");
