@@ -59,10 +59,10 @@ namespace PrisonOperationSystem_UI
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
             try
             {
-                if (connection.State == ConnectionState.Closed) 
-                    connection.Open();                               //TODO UPTADE QUERY 
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();                               
                 string query = "SELECT * FROM Wiezniowie WHERE PESEL='" + DisPESEL.Text + "' ";
-                
+
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader dr = command.ExecuteReader();
                 while (dr.Read())
@@ -72,25 +72,44 @@ namespace PrisonOperationSystem_UI
                     string PESEL = dr.GetString(3);
                     string rozpWyroku = dr.GetDateTime(4).ToString();
                     string zakWyroku = dr.GetDateTime(5).ToString();
-                    string przestepstwo = dr.GetInt32(11).ToString();
                     string stZagro = dr.GetInt32(12).ToString();
-                    string cela = dr.GetInt32(13).ToString();
+                    
 
                     txtimie.Text = imie;
                     txtnazwisko.Text = nazwisko;
                     txtPESEL.Text = PESEL;
                     txtRozpWyroku.Text = rozpWyroku;
                     txtZakWyroku.Text = zakWyroku;
-                    //TODO Display actual data not relation(3 V)
-                    txtConvictedFor.Text = przestepstwo;
                     txtThreatLevel.Text = stZagro;
-                    txtCell.Text = cela;
-                    
-                   
-                    
-                    
                     
                 }
+                dr.Close();
+
+                string query2 = "SELECT P.RodzajPrzestepstwa FROM Wiezniowie AS W JOIN Przestepstwa P ON P.ID = W.PrzestepstwaID  WHERE PESEL='" + DisPESEL.Text + "' ";
+                SqlCommand command2 = new SqlCommand(query2, connection);
+                dr = command2.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string przestepstwo = dr.GetString(0);
+                    txtConvictedFor.Text = przestepstwo;
+
+                }
+
+                dr.Close();
+
+                string query3 = "SELECT C.TypCeli FROM Wiezniowie AS W JOIN Cele C ON C.ID = W.CeleID WHERE PESEL='" + DisPESEL.Text + "' ";
+                SqlCommand command3 = new SqlCommand(query3, connection);
+                dr = command3.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string cela = dr.GetString(0);
+                    txtCell.Text = cela;
+
+                }
+
+                dr.Close();
             }
             catch (Exception ex)
             {
@@ -100,22 +119,21 @@ namespace PrisonOperationSystem_UI
             finally
             {
                 connection.Close();
+
             }
-
-
 
         }
 
         private void btnAddPrisoner_Click(object sender, RoutedEventArgs e) //logic for addprisoner button
         {
-            
+
 
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
             try
             {
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
-                string query = "INSERT INTO Wiezniowie (Imie,Nazwisko,PESEL,RozpoczecieWyroku,PlanowaneZakonczenieWyroku,PrzestepstwaID,StopienZagrozeniaWiezniaID,CeleID) VALUES('" + this.txtimie.Text+ "','"+this.txtnazwisko.Text+"','"+this.txtPESEL.Text+"','"+this.txtRozpWyroku.Text+"','"+this.txtZakWyroku.Text+"','"+this.txtConvictedFor.Text+"','"+this.txtThreatLevel.Text+"','"+this.txtCell.Text+"')";
+                string query = "INSERT INTO Wiezniowie (Imie,Nazwisko,PESEL,RozpoczecieWyroku,PlanowaneZakonczenieWyroku,PrzestepstwaID,StopienZagrozeniaWiezniaID,CeleID) VALUES('" + this.txtimie.Text + "','" + this.txtnazwisko.Text + "','" + this.txtPESEL.Text + "','" + this.txtRozpWyroku.Text + "','" + this.txtZakWyroku.Text + "','" + this.txtConvictedFor.Text + "','" + this.txtThreatLevel.Text + "','" + this.txtCell.Text + "')";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been added");

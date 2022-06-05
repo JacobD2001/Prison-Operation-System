@@ -27,7 +27,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBox Text="Convicted for" FontFamily="Courier New" Name="txtConvictedFor" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
-                <TextBox Text="Threat Level" FontFamily="Courier New" Name="txtThreatLevel" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
+                <TextBox Text="Threat Level(1-3)" FontFamily="Courier New" Name="txtThreatLevel" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="149"/>
                 <TextBox Text="Cell" FontFamily="Courier New" Name="txtCell" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
