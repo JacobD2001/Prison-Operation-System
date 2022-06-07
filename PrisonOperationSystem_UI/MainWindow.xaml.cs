@@ -15,7 +15,9 @@ namespace PrisonOperationSystem_UI
             InitializeComponent();
             FillComboBox();
         }
-
+        /// <summary>
+        /// Method filling combo box
+        /// </summary>
         public void FillComboBox() //filling combobox with data
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
@@ -41,7 +43,11 @@ namespace PrisonOperationSystem_UI
                 connection.Close();
             }
         }
-
+        /// <summary>
+        /// Method that executes queries do display data acording to chosen PESEL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_DropDownClosed(object sender, EventArgs e) //adding logic for combobox(filling textboxes with data acording to PESEL)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
@@ -110,6 +116,11 @@ namespace PrisonOperationSystem_UI
 
             }
         }
+        /// <summary>
+        /// Method to add prisoner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddPrisoner_Click(object sender, RoutedEventArgs e) //logic for addprisoner button
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
@@ -133,7 +144,11 @@ namespace PrisonOperationSystem_UI
                 connection.Close();
             }
         }
-
+        /// <summary>
+        /// Method to release prisoner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReleasePrisoner_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
@@ -157,6 +172,9 @@ namespace PrisonOperationSystem_UI
                 connection.Close();
             }
         }
+        /// <summary>
+        /// method that refresh window(used after adding/releasing prisoner)
+        /// </summary>
         private void Refresh()
         {
             MainWindow tmpRefreshWindow = new MainWindow();
