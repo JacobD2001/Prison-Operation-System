@@ -121,13 +121,9 @@ namespace PrisonOperationSystem_UI
                 connection.Close();
 
             }
-
         }
-
         private void btnAddPrisoner_Click(object sender, RoutedEventArgs e) //logic for addprisoner button
         {
-
-
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
             try
             {
@@ -148,28 +144,6 @@ namespace PrisonOperationSystem_UI
             {
                 connection.Close();
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
