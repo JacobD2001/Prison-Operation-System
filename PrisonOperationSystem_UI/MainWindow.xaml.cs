@@ -1,19 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PrisonOperationSystem_UI
 {
@@ -133,7 +121,29 @@ namespace PrisonOperationSystem_UI
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been added");
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void btnReleasePrisoner_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-2V1OQNV;Initial Catalog=ZakładKarny;Integrated Security=True");
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                string query = "DELETE FROM Wiezniowie WHERE PESEL = '"+this.DisPESEL.Text+"'";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Prisoner has been released");
             }
             catch (Exception ex)
             {

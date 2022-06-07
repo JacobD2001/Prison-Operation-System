@@ -31,7 +31,7 @@
                 <TextBox Text="Cell" FontFamily="Courier New" Name="txtCell" HorizontalContentAlignment="Center" Background="Lavender" Margin="20,5" Width="120" HorizontalAlignment="Left"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name="btnReleasePrisoner" Content="Realese Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144"></Button>
+                <Button Name="btnReleasePrisoner" Content="Realese Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144" Click="btnReleasePrisoner_Click"></Button>
                 <Button Name="btnAddPrisoner" Click="btnAddPrisoner_Click" Content="Add Prisoner" Margin="40" Background="Gray" Foreground="Snow" FontFamily="Courier New" Width="144"></Button>
             </StackPanel>
         </StackPanel>
