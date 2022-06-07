@@ -121,6 +121,7 @@ namespace PrisonOperationSystem_UI
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been added");
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -144,6 +145,7 @@ namespace PrisonOperationSystem_UI
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been released");
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -154,6 +156,13 @@ namespace PrisonOperationSystem_UI
             {
                 connection.Close();
             }
+        }
+        private void Refresh()
+        {
+            MainWindow tmpRefreshWindow = new MainWindow();
+            Application.Current.MainWindow = tmpRefreshWindow;
+            tmpRefreshWindow.Show();
+            this.Close();
         }
     }
 }
