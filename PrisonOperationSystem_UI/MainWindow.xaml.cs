@@ -1,6 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Windows;
 
@@ -49,7 +48,7 @@ namespace PrisonOperationSystem_UI
             try
             {
                 if (connection.State == ConnectionState.Closed)
-                    connection.Open();
+                    connection.Open();                               
                 string query = "SELECT * FROM Wiezniowie WHERE PESEL='" + DisPESEL.Text + "' ";
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -62,7 +61,7 @@ namespace PrisonOperationSystem_UI
                     string rozpWyroku = dr.GetDateTime(4).ToString();
                     string zakWyroku = dr.GetDateTime(5).ToString();
                     string stZagro = dr.GetInt32(12).ToString();
-
+                    
 
                     txtimie.Text = imie;
                     txtnazwisko.Text = nazwisko;
@@ -70,7 +69,7 @@ namespace PrisonOperationSystem_UI
                     txtRozpWyroku.Text = rozpWyroku;
                     txtZakWyroku.Text = zakWyroku;
                     txtThreatLevel.Text = stZagro;
-
+                    
                 }
                 dr.Close();
 
@@ -122,8 +121,6 @@ namespace PrisonOperationSystem_UI
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been added");
-                // ComboBox_DropDownClosed(sender, e);
-                Refresh();
             }
             catch (Exception ex)
             {
@@ -143,12 +140,10 @@ namespace PrisonOperationSystem_UI
             {
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
-                string query = "DELETE FROM Wiezniowie WHERE PESEL = '" + this.DisPESEL.Text + "'";
+                string query = "DELETE FROM Wiezniowie WHERE PESEL = '"+this.DisPESEL.Text+"'";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Prisoner has been released");
-                //ComboBox_DropDownClosed(sender, e);
-                Refresh();
             }
             catch (Exception ex)
             {
@@ -159,18 +154,6 @@ namespace PrisonOperationSystem_UI
             {
                 connection.Close();
             }
-
-         
         }
-
-        private void Refresh()
-        {
-            MainWindow tmpRefreshWindow = new MainWindow();
-            Application.Current.MainWindow = tmpRefreshWindow;
-            tmpRefreshWindow.Show();
-            this.Close();
-        }
-
-
     }
 }
