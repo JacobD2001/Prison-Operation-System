@@ -10,8 +10,10 @@
     <Viewbox Stretch="Fill" StretchDirection="Both">
         <StackPanel>
             <StackPanel.Background>
-                <ImageBrush Stretch="Fill" ImageSource="C:\Users\dziko\source\repos\Prison Operation System\images\loginbackground.jpg"
-                AlignmentY="Top" AlignmentX="Center"/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF7F6868" Offset="1"/>
+                </LinearGradientBrush>
             </StackPanel.Background>
             <Label Content="LOGIN PANEL" FontFamily="Courier New" Foreground="White" FontSize="35" HorizontalAlignment="Center"/>
             <Separator Background="White"></Separator>
